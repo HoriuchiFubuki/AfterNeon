@@ -8,6 +8,8 @@ public class Title : MonoBehaviour
 {
     PlayerParamClass
        paramClass = PlayerParamClass.GetInstance();
+    ScoreClass
+        scoreClass = ScoreClass.GetInstance();
 
     [SerializeField]
     string nextScene = "NewScene";
@@ -42,6 +44,7 @@ public class Title : MonoBehaviour
         fade = gameObject.AddComponent<FadeEffect>();
         fadeFlag = false;
         Application.targetFrameRate = 60;
+        scoreClass.InitParam();
     }
 
     // Update is called once per frame
