@@ -16,7 +16,8 @@ public class ScoreClass
     }
 
     private float
-        totalScore;
+        totalScore,
+        bonusScore;
 
     private int
         hitCount;
@@ -32,12 +33,13 @@ public class ScoreClass
     public void InitParam()
     {
         totalScore = 0;
+        bonusScore = 0;
         hitCount = 0;
     }
 
-    public void SetScore(float Time, float bonus)
+    public void SetScore(float Time)
     {
-        totalScore = baseScore - (Time + deduction * hitCount) + bonus;
+        totalScore = baseScore - (Time + deduction * hitCount) + bonusScore;
 
         PlayerPrefs.SetFloat("NewScore", totalScore);
         PlayerPrefs.Save();
@@ -45,5 +47,9 @@ public class ScoreClass
     public void HitCount()
     {
         hitCount++;
+    }
+    public void addBounus(float val)
+    {
+        bonusScore += val;
     }
 }

@@ -40,7 +40,7 @@ public class GoalSystem : MonoBehaviour
             ClearLogo.gameObject.SetActive(true);
 
             ScoreClass scoreClass = ScoreClass.GetInstance();
-            scoreClass.SetScore(StateUI.stageTime, 0);
+            scoreClass.SetScore(StateUI.stageTime);
 
             Time.gameObject.SetActive(false);
 
