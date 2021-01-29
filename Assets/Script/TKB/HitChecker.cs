@@ -7,6 +7,8 @@ public class HitChecker : MonoBehaviour
 {
     PlayerParamClass
         paramClass = PlayerParamClass.GetInstance();
+    ScoreClass
+        scoreClass = ScoreClass.GetInstance();
 
     [SerializeField]
     GameObject dmgEfPrefub;
@@ -80,6 +82,7 @@ public class HitChecker : MonoBehaviour
         {
             collision.collider.isTrigger = true;
             ObjectKick(collision);
+            scoreClass.HitCount();
         }
     }
     private void ObjectKick(Collision hitObj)

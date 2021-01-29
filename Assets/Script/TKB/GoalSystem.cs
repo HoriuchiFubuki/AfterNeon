@@ -24,7 +24,7 @@ public class GoalSystem : MonoBehaviour
     public GameObject ClearLogo;
     public GameObject Time;
     public GameObject BGM;
-
+    
     private void OnTriggerEnter(Collider other)
     {
         SE_OneShot SE_Con = BGM.GetComponent<SE_OneShot>();
@@ -39,18 +39,17 @@ public class GoalSystem : MonoBehaviour
             //クリアしたよ表示
             ClearLogo.gameObject.SetActive(true);
 
-            //しばらくしたらリザルトへ
-            Invoke("ChangeScrene", 6f);
-
-            //今回のタイムをセーブしとく
-            PlayerPrefs.SetFloat("NewScore", StateUI.stageTime);
-            PlayerPrefs.Save();
+            ScoreClass scoreClass = ScoreClass.GetInstance();
+            scoreClass.SetScore(StateUI.stageTime, 0);
 
             Time.gameObject.SetActive(false);
+
+            //しばらくしたらリザルトへ
+            Invoke("ChangeScrene", 6f);
         }
     }
 
-    void ChangeScrene()
+    private void ChangeScrene()
     {
         paramClass.InitParam();
         SceneManager.LoadScene(nextScene);
