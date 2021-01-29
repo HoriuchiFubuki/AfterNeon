@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GoalSystem : MonoBehaviour
 {
+
     PlayerParamClass
         paramClass = PlayerParamClass.GetInstance();
 
@@ -19,9 +20,10 @@ public class GoalSystem : MonoBehaviour
         delay = 0.1f;
 
     [SerializeField]
-    string nextScene;
+    string nextScene = "NewScene";
 
     public GameObject ClearLogo;
+    public GameObject Players;
     public GameObject Time;
     public GameObject BGM;
 
@@ -46,6 +48,7 @@ public class GoalSystem : MonoBehaviour
             PlayerPrefs.SetFloat("NewScore", StateUI.stageTime);
             PlayerPrefs.Save();
 
+            Players.GetComponent<PlayerMove>().enabled = false;
             Time.gameObject.SetActive(false);
         }
     }
