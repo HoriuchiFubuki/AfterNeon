@@ -102,11 +102,13 @@ public class Anim_Con : MonoBehaviour
         ///プレイヤーが壁走りポイントに入ると壁走りアニメーションを再生 
         if (paramClass.isWallRun)
         {
-            Anm.SetBool("",true);
+            ;
+//            Anm.SetBool("",true);
         }
         else
         {
-            Anm.SetBool("",false);
+            ;
+//            Anm.SetBool("",false);
         }
 
 
