@@ -10,6 +10,7 @@ TagManager:
   - DashPanel
   - FootRight
   - FootLeft
+  - SideWall
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - 
   - Area
   - Input
-  - 
+  - SideWall
   - 
   - 
   - 
