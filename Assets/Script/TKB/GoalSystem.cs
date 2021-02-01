@@ -27,8 +27,6 @@ public class GoalSystem : MonoBehaviour
     public GameObject Time;
     public GameObject BGM;
 
-    public ParticleSystem Goal_Effect;
-
     private void OnTriggerEnter(Collider other)
     {
         SE_OneShot SE_Con = BGM.GetComponent<SE_OneShot>();
@@ -42,7 +40,6 @@ public class GoalSystem : MonoBehaviour
 
             //クリアしたよ表示
             ClearLogo.gameObject.SetActive(true);
-            Goal_Effect.Play();
 
             //しばらくしたらリザルトへ
             Invoke("ChangeScrene", 6f);
